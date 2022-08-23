@@ -1,6 +1,6 @@
-<div align="center">
-<img src="./assets/logo.png" height="200px" width="200px">
-</div> 
+<!-- <div align="center"> -->
+<!-- <img src="./assets/logo.png" height="200px" width="200px"> -->
+<!-- </div>  -->
 
 <h2 align="center">Neovim Lua Colorscheme (WIP, breaking changes will occur!)</h2>
 <p>
@@ -110,4 +110,4 @@ require('neobeans').setup({
 Any other colors can be overriden in a similar way.
 
 ## Credits 💝
-- [AlphaTechnolog](https://github.com/AlphaTechnolog).
+- [Everblush](https://github.com/Everblush/everblush.nvim).

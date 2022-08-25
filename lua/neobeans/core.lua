@@ -86,7 +86,7 @@ function M.get_light_colors()
     blue_light = "#00aae6",
     purple = "#8959a8",
     purple_dark = "#513666",
-    window = "#565656",
+    window = "#bfbeba",
     ruler = "#e9e8e2",
     darkgrey = "#444444",
     transparent = "NONE",

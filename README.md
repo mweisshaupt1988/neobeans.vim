@@ -1,19 +1,17 @@
-<!-- <div align="center"> -->
-<!-- <img src="./assets/logo.png" height="200px" width="200px"> -->
-<!-- </div>  -->
-
 <h2 align="center">Neovim Lua Colorscheme (WIP, breaking changes will occur!)</h2>
 <p>
-<h4 align="center" <i>Neobeans theme for Neovim</i></h4>
+  <h4 align="center" <i>Neobeans theme for Neovim</i></h4>
 </p>
 
- <p align="center">
-<img src="https://img.shields.io/github/stars/neobeans/neobeans.nvim?color=e5c76b&labelColor=22292b&style=for-the-badge">
-<img src="https://img.shields.io/static/v1?label=license&message=MIT&color=8ccf7e&labelColor=22292b&style=for-the-badge">
-<img src="https://img.shields.io/github/forks/neobeans/neobeans.nvim?color=e74c4c&labelColor=1b2224&style=for-the-badge">
+<!--
+<p align="center">
+  <img src="https://img.shields.io/github/stars/neobeans/neobeans.nvim?color=e5c76b&labelColor=22292b&style=for-the-badge">
+  <img src="https://img.shields.io/static/v1?label=license&message=MIT&color=8ccf7e&labelColor=22292b&style=for-the-badge">
+  <img src="https://img.shields.io/github/forks/neobeans/neobeans.nvim?color=e74c4c&labelColor=1b2224&style=for-the-badge">
 </p>
+-->
 
-neobeans.nvim is a port of neobeans.vim but written in lua 
+neobeans.nvim is a theme loosely based on the default NetBeans theme. 
 
 > ** IMPORTANT NOTE **: You need the latest version of neovim to use this, because this is totally written in lua!
 
@@ -23,19 +21,26 @@ neobeans.nvim is a port of neobeans.vim but written in lua
 
 ## External Plugin Support
 
+- dadbod, dadbod-ui
 - Telescope
+- NERDTree
 - Nvim Tree
 - Tresitter
 - Lsp
-- Lsp saga
-- Coc
-- Bufferline
 - Illuminate
 - Diff
 - Git signs
 - Git gutter
 - Lualine
+- Bufferline
+- vim-airline
 - Ident-BlankLine
+
+## Custom command
+neobeans.vim registers a custom command to switch between dark and light theme.
+```vim
+:ToggleNeobeans
+```
 
 ## Installation
 
@@ -58,13 +63,18 @@ To active the theme call this in your neovim config:
 ```lua
 local neobeans = require('neobeans')
 
-neobeans.setup({ nvim_tree = { contrast = true } }) -- or use contrast = false to not apply contrast
+neobeans.setup({
+    nvim_tree = { contrast = true }, -- or use contrast = false to not apply contrast
+    light_mode = false, -- the default is the dark theme, set to true to enable light theme
+})
 ```
 
 Or with vim script:
 
 ```vim
 colorscheme neobeans
+or
+colorscheme neobeans_dark
 ```
 
 > It will set automatically the `vim.opt.termguicolors` to true
@@ -83,13 +93,19 @@ lualine.setup {
 }
 ```
 
+## Activating vim-airline theme
+vim.g.airline_theme = "neobeans"
+
 ## Using the core to get the colors
 
 If you want to get the colors into a lua dictionary
 
 ```lua
 local neobeans = require('neobeans.core')
-local colors = neobeans.get_colors()
+local colors = neobeans.get_dark_colors()
+or
+local colors = neobeans.get_light_colors()
+
 ```
 
 ## Overriding colors

@@ -1,4 +1,3 @@
-
 local core = require('neobeans.core')
 local colors = core.get_dark_colors()
 

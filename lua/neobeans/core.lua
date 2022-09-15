@@ -11,6 +11,7 @@ function M.get_dark_colors()
     bracket = "#b3b9b8",
     black = "#000000",
     line = "#4d4d4d",
+    literal = "#f4d67a",
     selection = "#255ca9",
     red = "#841515",
     red_dark = "#590e0e";
@@ -32,25 +33,6 @@ function M.get_dark_colors()
     ruler = "#363636",
     darkgrey = "#e2e2e2",
     transparent = "NONE",
-
-    -- TODO: Remove
-    contrast = "#161d1f",
-    color0 = "#232a2d",
-    color1 = "#e57474",
-    color2 = "#8ccf7e",
-    color3 = "#e5c76b",
-    color4 = "#67b0e8",
-    color5 = "#c47fd5",
-    color6 = "#6cbfbf",
-    color7 = "#b3b9b8",
-    color8 = "#3b4244",
-    color9 = "#ef7d7d",
-    color10 = "#6bc568",
-    color11 = "#f4d67a",
-    color12 = "#71baf2",
-    color13 = "#ce89df",
-    color14 = "#67cbe7",
-    color15 = "#bdc3c2",
   }
 end
 
@@ -65,6 +47,7 @@ function M.get_light_colors()
     bracket = "#444444",
     black = "#000000",
     line = "#4d4d4d",
+    literal = "#f4d67a",
     selection = "#b0c5e3",
     red = "#841515",
     -- red_dark = "#590e0e";
@@ -90,25 +73,6 @@ function M.get_light_colors()
     ruler = "#e9e8e2",
     darkgrey = "#444444",
     transparent = "NONE",
-
-    -- TODO: Remove
-    contrast = "#161d1f",
-    color0 = "#232a2d",
-    color1 = "#e57474",
-    color2 = "#8ccf7e",
-    color3 = "#e5c76b",
-    color4 = "#67b0e8",
-    color5 = "#c47fd5",
-    color6 = "#6cbfbf",
-    color7 = "#b3b9b8",
-    color8 = "#3b4244",
-    color9 = "#ef7d7d",
-    color10 = "#6bc568",
-    color11 = "#f4d67a",
-    color12 = "#71baf2",
-    color13 = "#ce89df",
-    color14 = "#67cbe7",
-    color15 = "#bdc3c2",
   }
 end
 

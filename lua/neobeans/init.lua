@@ -16,8 +16,10 @@ local signs = require("neobeans.custom_signs")
     local light_mode = opts.light_mode or false
     if light_mode == true then
         colors = core.get_light_colors()
+        vim.o.background = "light"
     else
         colors = core.get_dark_colors()
+        vim.o.background = "dark"
     end
 
     vim.opt.termguicolors = true

@@ -16,9 +16,8 @@ neobeans.nvim is a theme loosely based on the default NetBeans theme.
 > ** IMPORTANT NOTE **: You need the latest version of neovim to use this, because this is totally written in lua!
 
 ## Screenshots
-
-![dark theme](https://raw.githubusercontent.com/neobeans/assets/neobeans_dark.png)
-![light theme](https://raw.githubusercontent.com/neobeans/assets/neobeans_light.png)
+![dark theme](assets/neobeans_dark.png?raw=true)
+![light theme](assets/neobeans_light.png?raw=true)
 
 ## External Plugin Support
 
@@ -89,6 +88,8 @@ colorscheme neobeans_dark
 
 ## Custom Signs
 The theme sets some custom signs with matching highlight definitions. See [custom_signs.lua](lua/neobeans/custom_signs.lua) for details.
+
+The signs require a font patched with NerdFonts glyphs!
 
 If you don't want those signs to be set, disable them prior to loading the theme.
 ```lua

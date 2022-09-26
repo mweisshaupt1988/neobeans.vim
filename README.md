@@ -1,4 +1,4 @@
-<h2 align="center">Neovim Lua Colorscheme (WIP, breaking changes will occur!)</h2>
+<h2 align="center">Neovim Lua Colorscheme</h2>
 <p>
   <h4 align="center" <i>Neobeans theme for Neovim</i></h4>
 </p>
@@ -17,24 +17,32 @@ neobeans.nvim is a theme loosely based on the default NetBeans theme.
 
 ## Screenshots
 
-![demonstration](https://raw.githubusercontent.com/neobeans/assets/main/nvim/nvim.png)
+![dark theme](https://raw.githubusercontent.com/neobeans/assets/neobeans_dark.png)
+![light theme](https://raw.githubusercontent.com/neobeans/assets/neobeans_light.png)
 
 ## External Plugin Support
 
 - dadbod, dadbod-ui
+- Dap, Dap-ui
+- nvim-cmp
 - Telescope
 - NERDTree
 - Nvim Tree
-- Tresitter
+- Treesitter
 - Lsp
 - Illuminate
 - Diff
 - Git signs
 - Git gutter
+- Signify
+- Neogit
 - Lualine
 - Bufferline
 - vim-airline
+- Lightbulb
 - Ident-BlankLine
+- Scrollbar
+- Startify
 
 ## Custom command
 neobeans.vim registers a custom command to switch between dark and light theme.
@@ -77,7 +85,16 @@ or
 colorscheme neobeans_dark
 ```
 
-> It will set automatically the `vim.opt.termguicolors` to true
+> It will automatically set the `vim.opt.termguicolors` to true
+
+## Custom Signs
+The theme sets some custom signs with matching highlight definitions. See [custom_signs.lua](lua/neobeans/custom_signs.lua) for details.
+
+If you don't want those signs to be set, disable them prior to loading the theme.
+```lua
+vim.g.neobeans_disable_signs = false
+```
+
 
 ## Activating lualine theme
 
@@ -103,7 +120,7 @@ If you want to get the colors into a lua dictionary
 ```lua
 local neobeans = require('neobeans.core')
 local colors = neobeans.get_dark_colors()
-or
+-- or
 local colors = neobeans.get_light_colors()
 
 ```

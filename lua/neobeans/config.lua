@@ -25,12 +25,13 @@ M.highlights_base = function (colors)
     FoldColumn = { fg = colors.foreground, bg = colors.ruler },
     LineNr = { fg = colors.foreground, bg = colors.ruler },
     FloatBorder = { fg = colors.foreground },
+    FloatTitle = { fg = colors.green },
+    NormalFloat = { bg = colors.background },
     Whitespace = { fg = colors.ruler },
     VertSplit = { fg = colors.window, bg = colors.transparent },
     CursorLine = { bg = colors.cursorline },
     CursorColumn = { bg = colors.line },
     ColorColumn = { bg = colors.line },
-    NormalFloat = { bg = colors.background },
     Visual = { bg = colors.selection },
     VisualNOS = { bg = colors.background },
     WarningMsg = { fg = colors.orange },
@@ -57,7 +58,6 @@ M.highlights_base = function (colors)
     Substitute = { fg = colors.black, bg = colors.yellow },
     MoreMsg = { fg = colors.green },
     Question = { fg = colors.green },
-    -- EndOfBuffer = { fg = colors.background },
     EndOfBuffer = { fg = colors.blue_dark },
     NonText = { fg = colors.blue_dark },
     Variable = { fg = colors.blue },
@@ -99,19 +99,6 @@ M.highlights_base = function (colors)
     TabLineFill = { fg = colors.foreground, bg = colors.background },
     Underlined = { underline = false, sp = colors.foreground },
 
-    -- barbar
-    BufferInactiveIndex = { fg = colors.comment },
-    BufferCurrent = { fg = colors.black, bg = colors.green },
-    BufferCurrentIndex = { fg = colors.black, bg = colors.green },
-    BufferCurrentMod = { fg = colors.black, bg = colors.green },
-    BufferCurrentSign = { fg = colors.black, bg = colors.green },
-    BufferCurrentTarget = { fg = colors.black, bg = colors.green },
---      ['BufferCurrent',        fg_current,  bg_current],
--- \ ['BufferCurrentIndex',   fg_special,  bg_current],
--- \ ['BufferCurrentMod',     fg_modified, bg_current],
--- \ ['BufferCurrentSign',    fg_special,  bg_current],
--- \ ['BufferCurrentTarget',  fg_target,   bg_current,   'bold'],
-
     -- nvim-cmp
     CmpDocumentationBorder = { fg = colors.foreground, bg = colors.background },
     CmpItemAbbr = { fg = colors.foreground },
@@ -124,7 +111,7 @@ M.highlights_base = function (colors)
     CmpItemKindKeyword = { fg = colors.blue_light },
 
     -- treesitter
-    TSAttribute = { fg = colors.aqua },
+    TSAttribute = { fg = colors.foreground },
     TSBoolean = { fg = colors.blue },
     TSCharacter = { fg = colors.orange },
     TSComment = { fg = colors.comment },
@@ -211,7 +198,7 @@ M.highlights_base = function (colors)
     DapUIBreakpointsCurrentLine = { fg = colors.green },
     DapUIBreakpointsDisabledLine = { fg = colors.comment },
 
---[[
+--[[ TODO: Currently not used
     DapUIDecoration guifg=#00F1F5")
     DapUISource guifg=#D484FF")
     DapUILineNumber guifg=#00f1f5")
@@ -232,6 +219,8 @@ M.highlights_base = function (colors)
     DiagnosticSignInfo = { fg = colors.blue, bg = colors.ruler },
     DiagnosticSignHint = { fg = colors.aqua, bg = colors.ruler },
 
+    LspInfoBorder = { fg = colors.foreground, bg = colors.transparent },
+
     -- LspTrouble
     LspTroubleText = { fg = colors.foreground },
     LspTroubleCount = { fg = colors.green_dark, bg = colors.foreground },
@@ -242,8 +231,6 @@ M.highlights_base = function (colors)
     illuminatedCurWord = { bg = colors.foreground },
 
     -- Incline
-    -- InclineNormal = { fg = colors.green, bg = colors.transparent },
-    -- InclineNormalNC = { fg = colors.comment, bg = colors.transparent },
     InclineNormal = { fg = colors.black, bg = colors.cursor },
     InclineNormalNC = { fg = colors.window, bg = colors.transparent },
 
@@ -258,10 +245,8 @@ M.highlights_base = function (colors)
     diffIndexLine = { fg = colors.line },
 
     -- Neogit
-    -- NeogitBranch = { fg = colors.color6 },
-    -- NeogitRemote = { fg = colors.color6 },
-    -- NeogitHunkHeader = { bg = colors.background, fg = colors.foreground },
-    -- NeogitHunkHeaderHighlight = { bg = colors.comment, fg = colors.color7 },
+    NeogitHunkHeader = { bg = colors.ruler, fg = colors.foreground },
+    NeogitHunkHeaderHighlight = { bg = colors.ruler, fg = colors.yellow },
     NeogitDiffContextHighlight = { bg = colors.background, fg = colors.foreground },
     NeogitDiffDeleteHighlight = { fg = colors.foreground, bg = colors.red_dark },
     NeogitDiffAddHighlight = { fg = colors.foreground, bg = colors.green_dark },
@@ -282,9 +267,10 @@ M.highlights_base = function (colors)
     SignifySignDelete = { bold = true, fg = colors.red_light, bg = colors.ruler },
 
     -- Telescope
-    TelescopeBorder = { fg = colors.foreground },
+    TelescopeBorder = { fg = colors.foreground, bg = colors.transparent },
     TelescopeNormal = { fg = colors.foreground },
     TelescopeSelection = { fg = colors.foreground, bg = colors.selection },
+    TelescopeTitle = { fg = colors.green },
 
     -- Indent Blank Line
     IndentBlanklineChar = { fg = colors.ruler },
@@ -298,10 +284,11 @@ M.highlights_base = function (colors)
     NERDTreeBookmarkName = { fg = colors.blue },
     NERDTreeBookmarksLeader = { fg = colors.background },
     NERDTreeDirSlash = { fg = colors.foreground },
-    NERDTreeOpenable = { fg = colors.green },
-    NERDTreeClosable = { fg = colors.green },
+    NERDTreeOpenable = { fg = colors.foreground },
+    NERDTreeClosable = { fg = colors.foreground },
     NERDTreePart = { fg = colors.aqua },
     NERDTreeHelp = { fg = colors.comment },
+    NERDTreeFlags = { fg = colors.comment },
 
     -- NvimTree
     NvimTreeNormal = { fg = colors.foreground, bg = colors.transparent },
@@ -311,16 +298,20 @@ M.highlights_base = function (colors)
     NvimTreeGitNew = { fg = colors.green },
     NvimTreeGitDeleted = { fg = colors.red },
     NvimTreeSpecialFile = { fg = colors.blue },
-    NvimTreeIndentMarker = { fg = colors.cursorline },
+    NvimTreeIndentMarker = { fg = colors.foreground },
     NvimTreeImageFile = { fg = colors.foreground },
     NvimTreeSymlink = { fg = colors.aqua },
-    NvimTreeFolderIcon = { fg = colors.blue, bg = colors.background },
-    NvimTreeFolderName = { fg = colors.foreground },
-    NvimTreeOpenedFolderName = { fg = colors.foreground },
+    NvimTreeFolderIcon = { fg = colors.comment },
+    NvimTreeFolderName = { bold = true, fg = colors.foreground },
+    NvimTreeOpenedFolderName = { bold = true, fg = colors.foreground },
     NvimTreeEmptyFolderName = { fg = colors.foreground },
     NvimTreeStatusLineNC = { bg = colors.background, fg = colors.transparent },
+    NvimTreeVertSplit = { fg = colors.window, bg = colors.transparent },
+    NvimTreeWinSeparator = { fg = colors.window, bg = colors.transparent },
 
-    LightBulbSign = { bg = colors.ruler },
+    -- LightBulb
+    LightBulbSign = { fg = colors.yellow_light, bg = colors.ruler },
+    LightBulbVirtualText = { fg = colors.yellow_light, bg = colors.transparent },
 
     -- NeoVim
     healthError = { fg = colors.red },

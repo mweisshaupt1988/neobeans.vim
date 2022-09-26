@@ -2,12 +2,11 @@ local M = {}
 
 function M.get_dark_colors()
   return {
-    comment = "#cccccc",
+    comment = "#969696",
     background = "#2b2b2b",
     foreground = "#ffffff",
     cursorline = "#4d4d4d",
     cursor = "#1abc9c",
-
     bracket = "#b3b9b8",
     black = "#000000",
     line = "#4d4d4d",
@@ -20,7 +19,7 @@ function M.get_dark_colors()
     orange_light = "#d06403",
     orange_dark = "#827f00",
     yellow = "#ffff00",
-    yellow_light = "#588500",
+    yellow_light = "#dfdf00",
     green = "#1abc9c",
     green_dark = "#0b4d3f",
     aqua = "#628fb5",
@@ -43,7 +42,6 @@ function M.get_light_colors()
     foreground = "#000000",
     cursorline = "#e9eff8",
     cursor = "#1abc9c",
-
     bracket = "#444444",
     black = "#000000",
     line = "#4d4d4d",

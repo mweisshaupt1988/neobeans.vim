@@ -45,7 +45,7 @@ function M.get_light_colors()
     bracket = "#444444",
     black = "#000000",
     line = "#4d4d4d",
-    literal = "#f4d67a",
+    literal = "#b8a25c",
     selection = "#b0c5e3",
     red = "#841515",
     -- red_dark = "#590e0e";

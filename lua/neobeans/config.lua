@@ -205,6 +205,20 @@ M.highlights_base = function (colors)
     DapUIFloatBorder guifg=#00F1F5")
 ]]
 
+    -- Diffview File History
+    DiffviewFilePanelTitle = { fg = colors.blue },
+    DiffviewFilePanelCounter = { fg = colors.foreground },
+    DiffviewSecondary = { fg = colors.darkgrey },
+    DiffviewFilePanelInsertions = { fg = colors.green },
+    DiffviewFilePanelDeletions = { fg = colors.red_light },
+    DiffviewStatusAdded = { fg = colors.green },
+    DiffviewStatusModified = { fg = colors.blue },
+    DiffviewStatusDeleted = { fg = colors.red_light },
+    DiffviewStatusBroken = { fg = colors.orange },
+    DiffviewStatusUnknown = { fg = colors.orange },
+    DiffviewStatusUntracked = { fg = colors.darkgrey },
+    DiffviewStatusTypeChanged = { fg = colors.blue },
+
     -- Diagnostic
     DiagnosticError = { fg = colors.red_light },
     DiagnosticWarn = { fg = colors.yellow_light },
@@ -243,6 +257,7 @@ M.highlights_base = function (colors)
     diffFile = { fg = colors.comment },
     diffLine = { fg = colors.comment },
     diffIndexLine = { fg = colors.line },
+    diffText = { underline = true, sp = colors.yellow, bg = colors.blue_dark },
 
     -- Neogit
     NeogitHunkHeader = { bg = colors.ruler, fg = colors.foreground },

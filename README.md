@@ -34,6 +34,7 @@ neobeans.nvim is a theme loosely based on the default NetBeans theme. It feature
 - Git signs
 - Git gutter
 - Signify
+- git-conflict.nvim
 - Neogit
 - Lualine
 - Bufferline

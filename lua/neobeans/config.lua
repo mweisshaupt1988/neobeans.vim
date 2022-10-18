@@ -281,6 +281,14 @@ M.highlights_base = function (colors)
     SignifySignChange = { bold = true, fg = colors.blue_light, bg = colors.ruler },
     SignifySignDelete = { bold = true, fg = colors.red_light, bg = colors.ruler },
 
+    -- Git Conflict
+    GitConflictAncestor = { bold = false, bg = colors.purple_dark },
+    GitConflictAncestorLabel = { bold = true, bg = colors.purple_dark },
+    GitConflictCurrent = { bold = false, bg = colors.red_dark },
+    GitConflictCurrentLabel = { bold = true, bg = colors.red_dark },
+    GitConflictIncoming = { bold = false, bg = colors.blue_dark },
+    GitConflictIncomingLabel = { bold = true, bg = colors.blue_dark },
+
     -- Telescope
     TelescopeBorder = { fg = colors.foreground, bg = colors.transparent },
     TelescopeNormal = { fg = colors.foreground },

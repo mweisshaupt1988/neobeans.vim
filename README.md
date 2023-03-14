@@ -55,13 +55,13 @@ neobeans.vim registers a custom command to switch between dark and light theme.
 You can install this plugin with packer:
 
 ```lua
-use { 'neobeans/neobeans.nvim', as = 'neobeans' }
+use { 'mweisshaupt1988/neobeans.vim', as = 'neobeans' }
 ```
 
 Or with vim-plug:
 
 ```vim
-Plug 'neobeans/neobeans.nvim', { 'as': 'neobeans' }
+Plug 'mweisshaupt1988/neobeans.vim', { 'as': 'neobeans' }
 ```
 
 ## Active theme

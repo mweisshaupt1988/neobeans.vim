@@ -18,6 +18,11 @@ return {
       b = { bg = colors.window, fg = colors.foreground },
     },
 
+    terminal = {
+      a = { bg = colors.bracket, fg = colors.black, gui = "bold" },
+      b = { bg = colors.window, fg = colors.foreground },
+    },
+
     visual = {
       a = { bg = colors.blue, fg = colors.black, gui = "bold" },
       b = { bg = colors.window, fg = colors.foreground },

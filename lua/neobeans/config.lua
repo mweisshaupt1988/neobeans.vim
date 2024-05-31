@@ -3,8 +3,8 @@ local M = {}
 M.highlights_base = function (colors)
   return {
     Normal = { fg = colors.foreground, bg = colors.background },
-    StatusLineNC = { fg = colors.transparent, bg = colors.ruler },
-    StatusLine = { fg = colors.foreground, bg = colors.ruler },
+    StatusLineNC = { fg = colors.transparent, bg = colors.statusline },
+    StatusLine = { fg = colors.foreground, bg = colors.statusline },
     SignColumn = { bold = true, bg = colors.ruler, fg = colors.ruler },
     MsgArea = { fg = colors.foreground, bg = colors.background },
     ModeMsg = { fg = colors.green },
@@ -29,6 +29,7 @@ M.highlights_base = function (colors)
     NormalFloat = { bg = colors.background },
     Whitespace = { fg = colors.ruler },
     VertSplit = { fg = colors.window, bg = colors.transparent },
+    Winseparator = { fg = colors.window, bg = colors.transparent },
     CursorLine = { bg = colors.cursorline },
     CursorColumn = { bg = colors.line },
     ColorColumn = { bg = colors.line },
@@ -91,13 +92,15 @@ M.highlights_base = function (colors)
     Debug = { fg = colors.red },
     Delimiter = { fg = colors.foreground },
     SpecialComment = { fg = colors.window },
-    Ignore = { fg = colors.red, bg = colors.transparent },
+    Ignore = { fg = colors.red_light, bg = colors.transparent },
     Todo = { fg = colors.yellow_light, bg = colors.transparent },
     Error = { bold = true, undercurl = true, fg = colors.red_light, sp = colors.red_light },
     TabLine = { fg = colors.foreground, bg = colors.window },
     TabLineSel = { fg = colors.foreground, bg = colors.background },
     TabLineFill = { fg = colors.foreground, bg = colors.background },
     Underlined = { underline = false, sp = colors.foreground },
+    WinBar = { bold = true, fg = colors.foreground, bg = colors.ruler },
+    WinBarNC = { bold = true, fg = colors.comment, bg = colors.ruler },
 
     -- nvim-cmp
     CmpDocumentationBorder = { fg = colors.foreground, bg = colors.background },
@@ -198,6 +201,24 @@ M.highlights_base = function (colors)
     DapUIBreakpointsCurrentLine = { fg = colors.green },
     DapUIBreakpointsDisabledLine = { fg = colors.comment },
 
+    -- DapUI Toolbar
+    DapUIPlayPause = { bold = true, fg = colors.green, bg = colors.ruler },
+    DapUIRestart = { bold = true, fg = colors.green, bg = colors.ruler },
+    DapUIStepOver = { bold = true, fg = colors.foreground, bg = colors.ruler },
+    DapUIStepInto = { bold = true, fg = colors.foreground, bg = colors.ruler },
+    DapUIStepBack = { bold = true, fg = colors.foreground, bg = colors.ruler },
+    DapUIStepOut = { bold = true, fg = colors.foreground, bg = colors.ruler },
+    DapUIStop    = { bold = true, fg = colors.red_light, bg = colors.ruler },
+    DapUIUnavailable = { bold = true, fg = colors.comment, bg = colors.ruler },
+    DapUIPlayPauseNC = { bold = true, fg = colors.green, bg = colors.ruler },
+    DapUIRestartNC = { bold = true, fg = colors.green, bg = colors.ruler },
+    DapUIStepOverNC = { bold = true, fg = colors.foreground, bg = colors.ruler },
+    DapUIStepIntoNC = { bold = true, fg = colors.foreground, bg = colors.ruler },
+    DapUIStepBackNC = { bold = true, fg = colors.foreground, bg = colors.ruler },
+    DapUIStepOutNC = { bold = true, fg = colors.foreground, bg = colors.ruler },
+    DapUIStopNC    = { bold = true, fg = colors.red_light, bg = colors.ruler },
+    DapUIUnavailableNC = { bold = true, fg = colors.comment, bg = colors.ruler },
+
 --[[ TODO: Currently not used
     DapUIDecoration guifg=#00F1F5")
     DapUISource guifg=#D484FF")
@@ -233,11 +254,16 @@ M.highlights_base = function (colors)
     DiagnosticSignInfo = { fg = colors.blue, bg = colors.ruler },
     DiagnosticSignHint = { fg = colors.aqua, bg = colors.ruler },
 
+    LuaLineDiagnosticError = { fg = colors.orange_light, bg = colors.window },
+    LuaLineDiagnosticWarn = { fg = colors.yellow_light, bg =colors.window },
+    LuaLineDiagnosticInfo = { fg = colors.blue, bg = colors.window },
+    LuaLineDiagnosticHint = { fg = colors.aqua, bg = colors.window },
+
     LspInfoBorder = { fg = colors.foreground, bg = colors.transparent },
 
     -- LspTrouble
-    LspTroubleText = { fg = colors.foreground },
-    LspTroubleCount = { fg = colors.green_dark, bg = colors.foreground },
+    LspTroubleText = { fg = colors.foreground, bg = colors.transparent },
+    LspTroubleCount = { fg = colors.green_dark, bg = colors.transparent },
     LspTroubleNormal = { fg = colors.foreground, bg = colors.background },
 
     -- Illuminate
@@ -257,7 +283,7 @@ M.highlights_base = function (colors)
     diffFile = { fg = colors.comment },
     diffLine = { fg = colors.comment },
     diffIndexLine = { fg = colors.line },
-    diffText = { underline = true, sp = colors.yellow, bg = colors.blue_dark },
+    diffText = { underline = true, sp = colors.yellow_light, bg = colors.blue_dark },
 
     -- Neogit
     NeogitHunkHeader = { bg = colors.ruler, fg = colors.foreground },
@@ -265,6 +291,25 @@ M.highlights_base = function (colors)
     NeogitDiffContextHighlight = { bg = colors.background, fg = colors.foreground },
     NeogitDiffDeleteHighlight = { fg = colors.foreground, bg = colors.red_dark },
     NeogitDiffAddHighlight = { fg = colors.foreground, bg = colors.green_dark },
+    NeogitUnstagedChanges = { bold = true, fg = colors.blue },
+    NeogitUnmergedChanges = { bold = true, fg = colors.blue },
+    NeogitUnpulledChanges = { bold = true, fg = colors.blue },
+    NeogitStagedChanges = { bold = true, fg = colors.blue },
+    NeogitStashes = { bold = true, fg = colors.blue },
+    NeogitRecentcommits = { bold = true, fg = colors.blue },
+    NeogitUntrackedfiles = { bold = true, fg = colors.blue },
+    NeogitPopupSwitchKey = { bold = true, fg = colors.green },
+    NeogitPopupOptionKey = { bold = true, fg = colors.green },
+    NeogitPopupConfigKey = { bold = true, fg = colors.green },
+    NeogitPopupActionKey = { bold = true, fg = colors.green },
+
+    -- Markdown
+    markdownH1 = { bold = true },
+    markdownH2 = { bold = true },
+    markdownH3 = { bold = true },
+    markdownH4 = { bold = true },
+    markdownH5 = { bold = true },
+    markdownH6 = { bold = true },
 
     -- GitGutter
     GitGutterAdd = { bold = true, fg = colors.green, bg = colors.ruler },
@@ -334,6 +379,14 @@ M.highlights_base = function (colors)
     NvimTreeWinSeparator = { fg = colors.window, bg = colors.transparent },
     NvimTreeBookmark = { fg = colors.blue },
 
+    -- Noice
+    NoiceCmdlinePopupBorder = { fg = colors.foreground, bg = colors.transparent },
+    NoiceCmdlinePopupBorderCmdline = { fg = colors.darkgrey, bg = colors.transparent },
+    NoiceCmdlinePopupBorderFilter = { fg = colors.orange, bg = colors.transparent },
+    NoiceCmdlinePopupBordercRename = { fg = colors.green, bg = colors.transparent },
+    NoiceCmdlinePopupBorderLua = { fg = colors.blue, bg = colors.transparent },
+    NoiceCmdlinePopupBorderSearch = { fg = colors.yellow, bg = colors.transparent },
+
     -- LightBulb
     LightBulbSign = { fg = colors.yellow_light, bg = colors.ruler },
     LightBulbVirtualText = { fg = colors.yellow_light, bg = colors.transparent },
@@ -346,6 +399,9 @@ M.highlights_base = function (colors)
     -- BufferLine
     BufferLineIndicatorSelected = { fg = colors.green },
     BufferLineFill = { fg = colors.background, bg = colors.background },
+
+    -- Rust
+
 
     -- Scrollbar
     ScrollbarHandle = { bg = colors.window },
@@ -360,7 +416,8 @@ M.highlights_base = function (colors)
     ScrollbarHintHandle = { fg = colors.aqua, bg = colors.window },
     ScrollbarHint = { fg = colors.aqua },
     ScrollbarMiscHandle = { fg = colors.foreground, bg = colors.window },
-    ScrollbarMisc = { fg = colors.foreground },
+    ScrollbarMisc = { fg = colors.ruler, bg = colors.window },
+    ScrollbarCursor = { fg = colors.ruler, bg = colors.window },
 
     -- Startify
     StartifyHeader = { bold = true, fg = colors.blue_light },
@@ -369,6 +426,20 @@ M.highlights_base = function (colors)
     StartifyFile = { italic = true, fg = colors.blue },
     StartifySpecial = { fg = colors.darkgrey },
     StartifySelect = { fg = colors.blue_light },
+
+    -- Trouble
+    TroubleFoldIcon = { fg = colors.foreground, bg = colors.transparent },
+    TroubleIndent = { fg = colors.ruler, bg = colors.transparent },
+    TroubleLocation = { fg = colors.aqua, bg = colors.transparent },
+    TroubleSignInformation = { fg = colors.blue, bg = colors.transparent },
+    TroubleSignWarning = { fg = colors.yellow_light, bg = colors.transparent },
+    TroubleSignHint = { fg = colors.aqua, bg = colors.transparent },
+    TroubleSignError = { fg = colors.red_light, bg = colors.transparent },
+    TroubleSource = { fg = colors.blue, bg = colors.transparent },
+    TroublePreview = { fg = colors.yellow_light, bg = colors.transparent },
+    TroubleCount = { fg = colors.foreground, bg = colors.transparent },
+    TroubleFile = { bold = true, fg = colors.foreground, bg = colors.transparent },
+    LspTrouble = { fg = colors.foreground, bg = colors.transparent },
   }
 end
 

@@ -11,7 +11,7 @@ M.set_custom_signs = function ()
     vim.fn.sign_define('LightBulbSign', { text = "", texthl = "LightBulbSign", linehl="", numhl="" })
 
     -- Diagnostic
-    local signs = { Error = " ", Warn = " ", Hint = " ", Info = "i " }
+    local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })

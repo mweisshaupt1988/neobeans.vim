@@ -30,6 +30,7 @@ function M.get_dark_colors()
     purple_dark = "#513666",
     window = "#565656",
     ruler = "#363636",
+    statusline = "#363636",
     darkgrey = "#e2e2e2",
     transparent = "NONE",
   }
@@ -69,6 +70,7 @@ function M.get_light_colors()
     purple_dark = "#513666",
     window = "#bfbeba",
     ruler = "#e9e8e2",
+    statusline = "#363636",
     darkgrey = "#444444",
     transparent = "NONE",
   }

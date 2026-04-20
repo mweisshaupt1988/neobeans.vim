@@ -478,6 +478,10 @@ M.highlights_base = function (colors)
     ScrollbarMisc = { fg = colors.ruler, bg = colors.window },
     ScrollbarCursor = { fg = colors.ruler, bg = colors.window },
 
+    -- Scrollview
+    ScrollView = { bg = colors.window },
+    ScrollViewSearch = { fg = colors.yellow },
+
     -- Startify
     StartifyHeader = { bold = true, fg = colors.blue_light },
     StartifyPath = { italic = true, fg = colors.foreground },

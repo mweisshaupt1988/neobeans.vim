@@ -35,6 +35,7 @@ function M.get_dark_colors()
     statusline = "#363636",
     darkgrey = "#e2e2e2",
     transparent = "NONE",
+    dimmed = "#191919"
   }
 end
 
@@ -75,6 +76,7 @@ function M.get_light_colors()
     statusline = "#363636",
     darkgrey = "#444444",
     transparent = "NONE",
+    dimmed = "#999999"
   }
 end
 

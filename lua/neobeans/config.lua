@@ -274,6 +274,21 @@ M.highlights_base = function (colors)
 
     LspInfoBorder = { fg = colors.foreground, bg = colors.transparent },
 
+    -- Flog
+    flogAuthor  = { fg = colors.literal },
+    flogBranch0 = { fg = colors.cursorline },
+    flogBranch1 = { fg = colors.foreground },
+    flogBranch2 = { fg = colors.green },
+    flogBranch3 = { fg = colors.greenalt },
+    flogBranch4 = { fg = colors.green_dark },
+    flogBranch5 = { fg = colors.blue },
+    flogBranch6 = { fg = colors.blue_dark },
+    flogBranch7 = { fg = colors.blue_darker },
+    flogBranch8 = { fg = colors.purple },
+    flogBranch9 = { fg = colors.purple_dark },
+    flogDate    = { fg = colors.aqua, bold = false },
+    flogHash    = { fg = colors.line },
+
     -- LspTrouble
     LspTroubleText = { fg = colors.foreground, bg = colors.transparent },
     LspTroubleCount = { fg = colors.green_dark, bg = colors.transparent },
@@ -286,6 +301,14 @@ M.highlights_base = function (colors)
     -- Incline
     InclineNormal = { fg = colors.black, bg = colors.cursor },
     InclineNormalNC = { fg = colors.window, bg = colors.transparent },
+
+    -- Jira
+    JiraTabInactive = { bold = true, bg = colors.ruler, fg = colors.literal },
+    JiraStatus_Backlog = { fg = colors.black, bg = colors.darkgrey },
+    JiraStatus_In_Progress = { fg = colors.black, bg = colors.green },
+    JiraStatus_In_Review = { fg = colors.black, bg = colors.blue },
+    JiraStatus_Ready_for_Prod = { fg = colors.black, bg = colors.foreground },
+    JiraStatus_Waiting = { fg = colors.black, bg = colors.yellow_light },
 
     -- Neogit
     NeogitHunkHeader = { bold = true, bg = colors.ruler, fg = colors.literal },
@@ -361,6 +384,14 @@ M.highlights_base = function (colors)
     GitConflictCurrentLabel = { bold = true, bg = colors.red_dark },
     GitConflictIncoming = { bold = false, bg = colors.blue_dark },
     GitConflictIncomingLabel = { bold = true, bg = colors.blue_dark },
+
+    -- Snacks
+    -- SnacksPicker = { bg = colors.transparent },
+    -- SnacksPickerBox = { bg = colors.transparent },
+    -- SnacksInputNormal = { bg = colors.transparent },
+    -- SnacksInputBorder = { bg = colors.transparent },
+    -- SnacksPicker = { bg = colors.dimmed, nocombine = true },
+    -- SnacksPickerBorder ={ bg = colors.dimmed, nocombine = true },
 
     -- Telescope
     TelescopeBorder = { fg = colors.foreground, bg = colors.transparent },
@@ -454,6 +485,7 @@ M.highlights_base = function (colors)
     StartifyFile = { italic = true, fg = colors.blue },
     StartifySpecial = { fg = colors.darkgrey },
     StartifySelect = { fg = colors.blue_light },
+    StartifyFooter = { bold = false, fg = colors.darkgrey },
 
     -- Trouble
     TroubleFoldIcon = { fg = colors.foreground, bg = colors.transparent },

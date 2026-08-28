@@ -9,10 +9,7 @@ local signs = require("neobeans.custom_signs")
             opts = {}
     end
 
-    -- captures.set_custom_captures()
-    if (vim.g.neobeans_disable_signs == nil or vim.g.neobeans_disable_signs == false) then
-        signs.set_custom_signs()
-    end
+    signs.set_custom_signs()
 
     local colors = nil
     local light_mode = opts.light_mode or false
